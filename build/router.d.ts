@@ -1,7 +1,7 @@
 /// <reference types="@cloudflare/workers-types" />
-declare type Method = "GET" | "PUT" | "POST" | "PATCH" | "DELETE" | "OPTIONS" | "HEAD";
-declare type Handler = (args: unknown) => unknown;
-declare type Route = {
+type Method = "GET" | "PUT" | "POST" | "PATCH" | "DELETE" | "OPTIONS" | "HEAD";
+type Handler = (args: unknown) => unknown;
+type Route = {
     path: URLPattern;
     method: Method;
     handler: Handler;
