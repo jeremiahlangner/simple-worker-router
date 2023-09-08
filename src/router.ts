@@ -40,4 +40,4 @@ class Router {
   }
 }
 
-export { type Method, type Handler, type Route, Router }
+export { Method, Handler, type Route, Router }

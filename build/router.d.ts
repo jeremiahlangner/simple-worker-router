@@ -16,4 +16,4 @@ declare class Router {
         ctx: unknown;
     }): unknown;
 }
-export { type Method, type Handler, type Route, Router };
+export { Method, Handler, type Route, Router };
