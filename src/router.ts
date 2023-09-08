@@ -11,10 +11,7 @@ type Route = {
 export class Router {
   routes: Route[];
 
-  constructor(
-    routes: [string, Handler, Method?][] = [],
-    
-  ) {
+  constructor(routes: [string, Handler, Method?][] = []) {
     this.routes = [];
 
     for (const route of routes) {
