@@ -1,6 +1,5 @@
-// An example 'toy' implementation of a router using URLPattern: https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API
 type Method = "GET" | "PUT" | "POST" | "PATCH" | "DELETE" | "OPTIONS" | "HEAD";
-type Handler = (args: unknown) => unknown;
+type Handler = (args: unknown) => unknown; // make sure args can be destructured for better typing
 
 type Route = {
   path: URLPattern;
