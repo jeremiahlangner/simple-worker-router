@@ -6,7 +6,7 @@ declare type Route = {
     method: Method;
     handler: Handler;
 };
-export declare class Router {
+declare class Router {
     routes: Route[];
     constructor(routes?: [string, Handler, Method?][]);
     register(path: string, handler: Handler, method?: Method): void;
@@ -16,4 +16,4 @@ export declare class Router {
         ctx: unknown;
     }): unknown;
 }
-export {};
+export { type Method, type Handler, type Route, Router };

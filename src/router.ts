@@ -7,7 +7,7 @@ type Route = {
   handler: Handler;
 };
 
-export class Router {
+class Router {
   routes: Route[];
 
   constructor(routes: [string, Handler, Method?][] = []) {
@@ -39,3 +39,5 @@ export class Router {
     return new Response("Not found", { status: 404 });
   }
 }
+
+export { type Method, type Handler, type Route, Router }

@@ -1,4 +1,4 @@
-export class Router {
+class Router {
     routes;
     constructor(routes = []) {
         this.routes = [];
@@ -27,3 +27,4 @@ export class Router {
         return new Response("Not found", { status: 404 });
     }
 }
+export { Router };
