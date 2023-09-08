@@ -6,7 +6,7 @@
   "types": "build/router.d.ts",
   "scripts": {
     "build": "rm -rf dist && npx tsc && npx esbuild src/router.ts --outdir=build --bundle --minify --format=esm",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jest"
   },
   "keywords": [
     "cloudflare",
@@ -17,6 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230904.0",
-    "@types/web": "^0.0.114"
+    "@types/web": "^0.0.114",
+    "ts-jest": "^29.1.1"
   }
 }
