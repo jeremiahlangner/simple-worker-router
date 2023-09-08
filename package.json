@@ -2,7 +2,7 @@
   "name": "simple-worker-router",
   "version": "0.0.1",
   "description": "A dead simple router for use with Cloudflare Workers",
-  "main": "dist/main.js",
+  "main": "dist/router.js",
   "scripts": {
     "build": "rm -rf dist && npx tsc && npx esbuild src/router.ts --outdir=dist --bundle --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
