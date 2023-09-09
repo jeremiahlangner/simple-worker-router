@@ -34,10 +34,10 @@ class Router {
       const match = route.path.exec({
         pathname: new URL(request.url).pathname,
       });
-      if (match) return route.handler(params);
+      if (match) return route.handler({ ...params, route: route.path });
     }
     return new Response("Not found", { status: 404 });
   }
 }
 
-export { Method, Handler, type Route, Router }
+export { Method, Handler, type Route, Router };
