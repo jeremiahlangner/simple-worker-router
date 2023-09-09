@@ -34,7 +34,7 @@ class Router {
       const match = route.path.exec({
         pathname: new URL(request.url).pathname,
       });
-      if (match) return route.handler({ ...params, route: route.path });
+      if (match) return route.handler({ ...params, route: match });
     }
     return new Response("Not found", { status: 404 });
   }
