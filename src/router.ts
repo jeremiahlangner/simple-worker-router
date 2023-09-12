@@ -7,6 +7,12 @@ type Route = {
   handler: Handler;
 };
 
+type HandlerParams = {
+  request: Request;
+  env: unknown;
+  ctx: ExecutionContext
+}
+
 class Router {
   routes: Route[];
 
@@ -26,7 +32,7 @@ class Router {
     });
   }
 
-  handle(params: { request: Request; env: unknown; ctx: unknown }) {
+  handle(params: HandlerParams) {
     const { request } = params;
 
     for (const route of this.routes) {

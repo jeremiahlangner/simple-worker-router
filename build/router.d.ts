@@ -6,14 +6,15 @@ type Route = {
     method: Method;
     handler: Handler;
 };
+type HandlerParams = {
+    request: Request;
+    env: unknown;
+    ctx: ExecutionContext;
+};
 declare class Router {
     routes: Route[];
     constructor(routes?: [string, Handler, Method?][]);
     register(path: string, handler: Handler, method?: Method): void;
-    handle(params: {
-        request: Request;
-        env: unknown;
-        ctx: unknown;
-    }): unknown;
+    handle(params: HandlerParams): unknown;
 }
 export { Method, Handler, type Route, Router };
