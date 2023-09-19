@@ -1,6 +1,6 @@
 /// <reference types="@cloudflare/workers-types" />
 type Method = "GET" | "PUT" | "POST" | "PATCH" | "DELETE" | "OPTIONS" | "HEAD";
-type Handler = (args: unknown) => unknown;
+type Handler = (args: any) => any;
 type Route = {
     path: URLPattern;
     method: Method;
@@ -8,13 +8,13 @@ type Route = {
 };
 type HandlerParams = {
     request: Request;
-    env: unknown;
+    env: any;
     ctx: ExecutionContext;
 };
 declare class Router {
     routes: Route[];
     constructor(routes?: [string, Handler, Method?][]);
     register(path: string, handler: Handler, method?: Method): void;
-    handle(params: HandlerParams): unknown;
+    handle(params: HandlerParams): any;
 }
 export { Method, Handler, type Route, Router };

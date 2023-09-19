@@ -1,5 +1,5 @@
 type Method = "GET" | "PUT" | "POST" | "PATCH" | "DELETE" | "OPTIONS" | "HEAD";
-type Handler = (args: unknown) => unknown; // make sure args can be destructured for better typing
+type Handler = (args: any) => any; // make sure args can be destructured for better typing
 
 type Route = {
   path: URLPattern;
@@ -9,7 +9,7 @@ type Route = {
 
 type HandlerParams = {
   request: Request;
-  env: unknown;
+  env: any;
   ctx: ExecutionContext
 }
 
