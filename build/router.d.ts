@@ -14,6 +14,7 @@ type HandlerParams = {
 declare class Router {
     routes: Route[];
     constructor(routes?: [string, Handler, Method?][]);
+    setup(routes: [string, Handler, Method?][]): void;
     register(path: string, handler: Handler, method?: Method): void;
     handle(params: HandlerParams): any;
 }

@@ -14,11 +14,17 @@ type HandlerParams = {
 }
 
 class Router {
-  routes: Route[];
+  routes: Route[] = [];
 
   constructor(routes: [string, Handler, Method?][] = []) {
-    this.routes = [];
+    // @ts-ignore
+    if (!globalThis.URLPattern) {
+      import("urlpattern-polyfill")
+        .then(() => this.setup(routes)); 
+    } else this.setup(routes);
+  }
 
+  setup(routes: [string, Handler, Method?][]) {
     for (const route of routes) {
       this.register(...route);
     }
