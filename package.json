@@ -5,7 +5,7 @@
   "main": "build/router.js",
   "types": "build/router.d.ts",
   "scripts": {
-    "build": "npm run test && rm -rf dist && npx tsc && npx esbuild src/router.ts --outdir=build --bundle --minify --format=esm",
+    "build": "npm run test && rm -rf dist && npx tsc && npx esbuild src/router.ts --external:urlpattern-polyfill --outdir=build --bundle --minify --format=esm",
     "test": "npx jest --pass-with-no-tests"
   },
   "keywords": [
